@@ -15,27 +15,6 @@ function initMap() {
 }
 
 
-var anchorLinks = document.querySelectorAll("[href^=\"#\"]");
-
-/* scroll */
-/*
-var scrolled, timer;
-
-document.getElementById("toTop").onclick = function() {
-    scrolled = window.pageYOffset;
-    scrollToTop();
-}
-
-function scrollToTop() {
-    if (scrolled > 0) {
-        window.scrollTo(0, scrolled);
-        scrolled -= 20;
-        timer = setTimeout(scrollToTop, 10);
-    } else {
-        clearTimeout(timer);
-    }
-}
-*/
 /* toTop */
 
 window.onscroll = function() {
