@@ -122,31 +122,44 @@
                 </div>
             </div>
         </section>
+        <section class="current">
+            <div class="wrapper">
+                <h2>Current <span>Auctions</span></h2>
+            </div>
+        </section>
         <section class="works">
             <div class="wrapper">
                 <h2>How <span>it Works</span></h2>
                 <div class="works-items">
                     <div class="work-item">
-                        <div class="works-item_symbol"></div>
+                        <div class="works-item_symbol"><i class="fas fa-mouse-pointer"></i></div>
                         <h4>Register</h4>
                         <p class="works-item_desc">To start using our auction, you’ll need to register. It’s completely free and requires just a few clicks!</p>
+                        <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="work-item">
-                        <div class="works-item_symbol"></div>
+                        <div class="works-item_symbol"><i class="fas fa-cart-arrow-down"></i></div>
                         <h4>Buy or Bid</h4>
                         <p class="works-item_desc">You can instantly buy or place a bid on any desired product right after registration on our website.</p>
+                        <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="work-item">
-                        <div class="works-item_symbol"></div>
+                        <div class="works-item_symbol"><i class="fas fa-gavel"></i></div>
                         <h4>Submit a Bid</h4>
                         <p class="works-item_desc">Submitting a bid to our auction is quick and easy. The process takes approximately 5 minutes.</p>
+                        <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="work-item">
-                        <div class="works-item_symbol"></div>
+                        <div class="works-item_symbol"><i class="fas fa-trophy"></i></div>
                         <h4>Win</h4>
                         <p class="works-item_desc">Easily win at our auction and enjoy owning the product you dream of after the bidding is closed.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="winners">
+            <div class="wrapper">
+                <h2>Join <span>the Winners</span></h2>
             </div>
         </section>
         <section class="about">
@@ -155,14 +168,14 @@
                 <div class="about-items">
                     <div class="about-item">
                         <div class="about-item_header">
-                            <div class="about-header_symbol"></div>
+                            <div class="about-header_symbol"><i class="fas fa-laptop"></i></div>
                             <h5>Quality products for the best customers</h5>
                         </div>
                         <div class="about-item_desc">Online Auction features a wide variety of quality products at wholesale prices with our main locations in San Francisco, CA and Phoenix, AZ. We strive to make sure our customers are completely satisfied with their purchase.</div>
                     </div>
                     <div class="about-item">
                         <div class="about-item_header">
-                            <div class="about-header_symbol"></div>
+                            <div class="about-header_symbol"><i class="far fa-thumbs-up"></i></div>
                             <h5>More than 20 years of auction experience</h5>
                         </div>
                         <div class="about-item_desc">We have the knowledge and ability to handle any type of auction. We handle small local sales, and large multiple-day, multi-million dollar auctions. Our services are tailored to fit each client's needs.</div>
@@ -173,6 +186,23 @@
         <section class="map">
             <div class="wrapper">
                 <h2>Our <span>Location</span></h2>
+                <div class="contacts">
+                    <div id="map"></div>
+                    <div class="contacts-info">
+                        <h3>Contact data:</h3>
+                        <ul class="contacts-info_list">
+                            <li class="contacts-info_item">E-mail: <a href="mailto: sales@auction.com.ua" class="email">sales@auction.com.ua</a></li>
+                            <li class="contacts-info_item">
+                                Phones:
+                                <div class="phones">
+                                    <a href="tel:+380961234567" class="telephone">+38 (096) 123-45-67</a><br>
+                                    <a href="tel:+380631234567" class="telephone">+38 (063) 123-45-67</a>
+                                </div>
+                            </li>
+                            <li class="contacts-info_item">Address: <span class="address">AuctionUA, Peremohy avenue 37, Kyiv, 03134, Ukraine</span></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -185,5 +215,8 @@
             </div>
         </section>
     </footer>
+    <script src="js/js.js" async></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBluEuixejKizjZWbMY0dsOVuWjj_qVydE&callback=initMap"
+    async defer></script>
 </body>
 </html>
