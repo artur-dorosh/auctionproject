@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Auction</title>
+    <link rel="icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -37,7 +38,7 @@
                     <div class="navbar-main__menu">
                         <ul class="navbar-menu__list">
                             <li class="navbar-menu__item">
-                                <a href="#" class="navbar-menu__link">Home</a>
+                                <a href="#top" class="navbar-menu__link">Home</a>
                             </li>
                             <li class="navbar-menu__item">
                                 <a href="#" class="navbar-menu__link">Sell</a>
@@ -46,10 +47,10 @@
                                 <a href="#" class="navbar-menu__link">Buy</a>
                             </li>
                             <li class="navbar-menu__item">
-                                <a href="#" class="navbar-menu__link">About</a>
+                                <a href="#about" class="navbar-menu__link">About</a>
                             </li>
                             <li class="navbar-menu__item">
-                                <a href="#" class="navbar-menu__link">Contacts</a>
+                                <a href="#contacts" class="navbar-menu__link">Contacts</a>
                             </li>
                         </ul>
                     </div>
@@ -125,6 +126,8 @@
         <section class="current">
             <div class="wrapper">
                 <h2>Current <span>Auctions</span></h2>
+                <div class="current-posts" id="posts"></div>
+                <div class="pagination"></div>
             </div>
         </section>
         <section class="works">
@@ -132,7 +135,7 @@
                 <h2>How <span>it Works</span></h2>
                 <div class="works-items">
                     <div class="work-item">
-                        <div class="works-item_symbol"><i class="fas fa-mouse-pointer"></i></div>
+                        <div class="works-item_symbol"><i class="far fa-hand-pointer"></i></div>
                         <h4>Register</h4>
                         <p class="works-item_desc">To start using our auction, you’ll need to register. It’s completely free and requires just a few clicks!</p>
                         <i class="fas fa-chevron-right"></i>
@@ -190,7 +193,7 @@
                 </div>
             </div>
         </section>
-        <section class="about">
+        <section class="about" id="about">
             <div class="wrapper">
                 <h2>About <span>Us</span></h2>
                 <div class="about-items">
@@ -211,7 +214,7 @@
                 </div>
             </div>
         </section>
-        <section class="map">
+        <section class="map" id="contacts">
             <div class="wrapper">
                 <h2>Our <span>Location</span></h2>
                 <div class="contacts">

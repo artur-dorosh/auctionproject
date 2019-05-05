@@ -105,6 +105,64 @@ h5 {
     color:#fff;
 }*/
 
+    /* fixed navbar */
+.navbar-main__outer.fixed {
+    position: fixed;
+    left: 0; top: 0; right: 0; bottom: 0;
+    z-index: 999;
+    height: 80px;
+    background-color: #fff;
+    box-shadow: 0 9px 21px 0 rgba(30, 30, 30, 0.23);
+    border-bottom: 1px solid #fff;
+}
+
+.navbar-main__outer.fixed .navbar-main {
+    padding: 20px 0;
+}
+
+.navbar-main__outer.fixed .logo {
+    height: 40px;
+}
+
+.navbar-main__outer.fixed .navbar-menu__link {
+    font-size: 19px;
+}
+
+.fix {
+    -webkit-animation-name: fix;
+    -webkit-animation-duration: 1.0s;
+    animation-name: fix;
+    animation-duration: 1.0s;
+}
+
+@keyframes fix {
+    from { transform: scale(1.1, 1.1); }
+    to { transform: scale(1, 1); }
+}
+
+@-webkit-keyframes fix {
+     from { transform: scale(1.1, 1.1); }
+     to { transform: scale(1, 1); }
+}
+
+.unfix {
+    -webkit-animation-name: unfix;
+    -webkit-animation-duration: .7s;
+    animation-name: unfix;
+    animation-duration: 0.7s;
+}
+
+@keyframes unfix {
+    from { transform: scale(0.8, 0.8); }
+    to { transform: scale(1, 1); }
+}
+
+@-webkit-keyframes unfix {
+     from { transform: scale(0.8, 0.8); }
+     to { transform: scale(1, 1); }
+}
+
+    /* static navbar */
 .navbar-main {
     display: flex;
     align-items: center;
@@ -143,6 +201,7 @@ h5 {
 .navbar-menu__link:hover {
     color: #000;
     transition: 0.25s ease-in-out;
+    cursor: pointer;
 }
 
 .navbar-menu__link::after {
@@ -206,6 +265,44 @@ h5 {
 }
 .slider-btn:hover {
     background-color: #555;
+    transition: 0.25s ease-in-out;
+}
+
+.post-submit {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 15px;
+    padding: 15px 10px;
+    color: #000;
+    background-color: #ffd613;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 7px;
+    text-align: center;
+    text-decoration: none;
+}
+.post-submit:hover {
+    color: #ffd613;
+    background-color: #000;
+    transition: 0.25s ease-in-out;
+}
+
+.post-buy {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 15px 10px;
+    box-sizing: border-box;
+    color: #ffd613;
+    background-color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 7px;
+    text-align: center;
+    text-decoration: none;
+}
+.post-buy:hover {
+    color: #000;
+    background-color: #ffd613;
     transition: 0.25s ease-in-out;
 }
 
@@ -338,6 +435,143 @@ h2 > span {
     opacity: .5;
 }
 
+.current-posts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.current-post {
+    display: none;
+    width: 25%;
+    margin-bottom: 40px;
+    padding: 0 25px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.post-countdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 135px;
+    background-color: #e4e4e4;
+    border-radius: 5px;
+}
+
+.post-countdown::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 34px 9px 0 9px;
+    border-color: #e4e4e4 transparent transparent transparent;
+    right: 6px;
+    bottom: -23px;
+    transform: rotate(-41deg);
+}
+
+.countdown-amount {
+    padding: 5px 13px;
+    color: rgba(0, 0, 0, 0.55);
+    font-family: "Montserrat", sans-serif;
+    font-size: 22px;
+    line-height: 1.2;
+}
+
+.post-img {
+    max-width: 270px;
+    max-height: 220px;
+}
+
+.post-price {
+    margin-top: 10px;
+    color: #888;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+}
+
+.finish-price {
+    margin-left: 50px;
+}
+
+.post-step {
+    margin-top: 10px;
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 48px;
+}
+
+.post-step::before {
+    content: '$';
+    font-size: 28px;
+    vertical-align: top;
+}
+
+.post-name {
+    display: block;
+    margin-top: 6px;
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-decoration: none;
+}
+.post-name:hover {
+    text-decoration: underline;
+}
+
+.pagination {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination-item {
+    margin: 0 10px;
+    padding: 15px;
+    width: 20px;
+    color: #000;
+    background-color: #ffd613;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.pagination-item:hover {
+    color: #fff;
+    background-color: #ffd613;
+    transition: 0.25s ease-in-out;
+}
+
+.pagination-item.active {
+    color: #fff;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from { opacity: 0.4 }
+    to { opacity: 1 }
+}
+
+@-webkit-keyframes fade {
+    from { opacity: 0.4 }
+    to { opacity: 1 }
+}
+
 
 
 
@@ -382,7 +616,7 @@ h2 > span {
 
 .work-item > i {
     position: absolute;
-    top: 17%; right: 30px;
+    top: 17%; right: 45px;
     display: block;
     color: #777;
     font-size: 50px;
