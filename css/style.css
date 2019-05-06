@@ -105,6 +105,27 @@ h5 {
     color:#fff;
 }*/
 
+.register {
+    display: block;
+}
+.register.hide {
+    display: none;
+}
+
+.signed-user {
+    display: none;
+}
+.signed-user.visible {
+    display: block;
+}
+
+.signed-user_name {
+    margin-right: 20px;
+    color: #ffd613;
+    font-size: 18px;
+    font-weight: bold;
+}
+
     /* fixed navbar */
 .navbar-main__outer.fixed {
     position: fixed;
@@ -197,6 +218,7 @@ h5 {
     color: #777;
     font-weight: 600;
     text-decoration: none;
+    cursor: pointer;
 }
 .navbar-menu__link:hover {
     color: #000;
@@ -216,6 +238,13 @@ h5 {
 }
 .navbar-menu__link:hover::after  {
     width: 100%;
+    transition: 0.25s ease-in-out;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+   .navbar-menu__link::after {
+       transition: none;
+   }
 }
 
     /* buttons */
@@ -235,6 +264,7 @@ h5 {
     font-weight: 600;
     color: #fff;
     background-color: #333;
+    cursor: pointer;
 }
 .btn-sign:hover {
     color: #000;
@@ -248,8 +278,23 @@ h5 {
     font-weight: 600;
     color: #000;
     background-color: #ffd613;
+    cursor: pointer;
 }
 .btn-reg:hover {
+    color: #fff;
+    background-color: #333;
+    transition: 0.25s ease-in-out;
+}
+
+.btn-logout {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+    color: #000;
+    background-color: #ffd613;
+    cursor: pointer;
+}
+.btn-logout:hover {
     color: #fff;
     background-color: #333;
     transition: 0.25s ease-in-out;
@@ -262,6 +307,7 @@ h5 {
     font-weight: bold;
     color: #fff;
     background-color: #000;
+    cursor: pointer;
 }
 .slider-btn:hover {
     background-color: #555;
@@ -280,6 +326,7 @@ h5 {
     border-radius: 7px;
     text-align: center;
     text-decoration: none;
+    cursor: pointer;
 }
 .post-submit:hover {
     color: #ffd613;
@@ -299,11 +346,317 @@ h5 {
     border-radius: 7px;
     text-align: center;
     text-decoration: none;
+    cursor: pointer;
 }
 .post-buy:hover {
     color: #000;
     background-color: #ffd613;
     transition: 0.25s ease-in-out;
+}
+
+    /* signin */
+
+.signin {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.signin-modal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 100px 50px 80px;
+    background-color: #fff;
+    border-radius: 25px;
+    transform: translate(0, 100%);
+    transition: .5s;
+}
+.signin-modal.centered {
+    transform: translate(0, 0);
+}
+
+.centered {
+    -webkit-animation-name: centered;
+    -webkit-animation-duration: 0.5s;
+    animation-name: centered;
+    animation-duration: 0.5s;
+}
+
+@keyframes centered {
+    from { transform: translate(0, 100%); }
+    to { transform: translate(0, 0); }
+}
+
+@-webkit-keyframes centered {
+    from { transform: translate(0, 100%); }
+    to { transform: translate(0, 0); }
+}
+
+.signin-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.loginin {
+    display: block;
+    margin-bottom: 25px;
+    padding: 10px 15px;
+    width: 70%;
+    height: 35px;
+    color: #888;
+    background-color: #f5f5f5;
+    font-size: 24px;
+    line-height: 28px;
+    border: 1px solid #f5f5f5;
+    border-radius: 5px;
+    outline: none;
+}
+
+.passwordin {
+    display: block;
+    margin-bottom: 25px;
+    padding: 10px 15px;
+    width: 70%;
+    height: 35px;
+    color: #888;
+    background-color: #f5f5f5;
+    font-size: 24px;
+    line-height: 28px;
+    border: 1px solid #f5f5f5;
+    border-radius: 5px;
+    outline: none;
+}
+
+.signin-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 57px;
+    color: #000;
+    background-color: #ffd613;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+.signin-btn:hover {
+    color: #ffd613;
+    background-color: #000;
+    transition: 0.25s ease-in-out;
+}
+
+.close-btn {
+    position: absolute;
+    right: 30px; top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    color: #000;
+    background-color: #ffd613;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+.close-btn:hover {
+    color: #ffd613;
+    background-color: #000;
+    transition: 0.25s ease-in-out;
+}
+
+.signin-error {
+    display: none;
+    margin-top: 20px;
+    color: #f00;
+    font-weight: bold;
+}
+
+.success {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 100px 50px 80px;
+    background-color: #fff;
+    border-radius: 25px;
+    transition: .5s;
+}
+
+.successful {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.successful > i {
+    color: #0bb50b;
+    font-size: 40px;
+}
+
+.welcome {
+    margin-top: 20px;
+    font-size: 56px;
+}
+
+.user {
+    font-weight: bold;
+}
+
+.registerin {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.register-modal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 100px 50px 80px;
+    background-color: #fff;
+    border-radius: 25px;
+    transform: translate(0, 0%);
+    transition: .5s;
+}
+.register-modal.centered {
+    transform: translate(0, 0);
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.loginreg {
+    display: block;
+    margin-bottom: 25px;
+    padding: 10px 15px;
+    width: 70%;
+    height: 35px;
+    color: #888;
+    background-color: #f5f5f5;
+    font-size: 24px;
+    line-height: 28px;
+    border: 1px solid #f5f5f5;
+    border-radius: 5px;
+    outline: none;
+}
+
+.passwordreg {
+    display: block;
+    margin-bottom: 25px;
+    padding: 10px 15px;
+    width: 70%;
+    height: 35px;
+    color: #888;
+    background-color: #f5f5f5;
+    font-size: 24px;
+    line-height: 28px;
+    border: 1px solid #f5f5f5;
+    border-radius: 5px;
+    outline: none;
+}
+
+.register-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 57px;
+    color: #000;
+    background-color: #ffd613;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+.register-btn:hover {
+    color: #ffd613;
+    background-color: #000;
+    transition: 0.25s ease-in-out;
+}
+
+.closereg-btn {
+    position: absolute;
+    right: 30px; top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    color: #000;
+    background-color: #ffd613;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+.closereg-btn:hover {
+    color: #ffd613;
+    background-color: #000;
+    transition: 0.25s ease-in-out;
+}
+
+.successreg {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 25px;
+    transition: .5s;
+}
+
+.successfulreg {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.successfulreg > i {
+    color: #0bb50b;
+    font-size: 50px;
 }
 
     /* main */
@@ -422,7 +775,7 @@ h2 > span {
 
 .current {
     position: relative;
-    padding: 100px 0;
+    padding: 70px 0;
 }
 
 .current > .wrapper::before {

@@ -26,6 +26,10 @@
                         <a href="#" class="btn btn-sign">Sign in</a>
                         <a href="#" class="btn btn-reg">Register</a>
                     </div>
+                    <div class="signed-user">
+                        <span class="signed-user_name"></span>
+                        <a href="#" class="btn btn-logout">Logout</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -44,7 +48,7 @@
                                 <a href="#" class="navbar-menu__link">Sell</a>
                             </li>
                             <li class="navbar-menu__item">
-                                <a href="#" class="navbar-menu__link">Buy</a>
+                                <a href="#buy" class="navbar-menu__link">Buy</a>
                             </li>
                             <li class="navbar-menu__item">
                                 <a href="#about" class="navbar-menu__link">About</a>
@@ -123,7 +127,7 @@
                 </div>
             </div>
         </section>
-        <section class="current">
+        <section class="current" id="buy">
             <div class="wrapper">
                 <h2>Current <span>Auctions</span></h2>
                 <div class="current-posts" id="posts"></div>
@@ -246,6 +250,34 @@
             </div>
         </section>
     </footer>
+    <div class="signin" id="signin">
+        <div class="signin-modal">
+            <form class="signin-form">
+                <input type="text" class="loginin" placeholder="Login" required>
+                <input type="password" class="passwordin" placeholder="Password" required>
+                <button type="submit" name="signin" class="signin-btn">Enter</button>
+                <span class="signin-error"></span>
+            </form>
+            <button type="button" name="close" class="close-btn">Close</button>
+        </div>
+        <div class="success">
+            <div class="successful"><i class="fas fa-check-circle"></i> Success!</div>
+            <div class="welcome">Welcome, <span class="user"></span></div>
+        </div>
+    </div>
+    <div class="registerin" id="registerin">
+        <div class="register-modal">
+            <form class="register-form">
+                <input type="text" class="loginreg" placeholder="Login" required>
+                <input type="password" class="passwordreg" placeholder="Password" required>
+                <button type="submit" name="register" class="register-btn">Register</button>
+            </form>
+            <button type="button" name="close" class="closereg-btn">Close</button>
+        </div>
+        <div class="successreg">
+            <div class="successfulreg"><i class="fas fa-check-circle"></i> Successful registration!</div>
+        </div>
+    </div>
     <a href="#top" id="toTop"><i class="fas fa-chevron-up"></i></a>
     <script src="js/js.js" async defer></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBluEuixejKizjZWbMY0dsOVuWjj_qVydE&callback=initMap"
