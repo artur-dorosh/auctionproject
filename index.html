@@ -130,6 +130,34 @@
         <section class="current" id="buy">
             <div class="wrapper">
                 <h2>Current <span>Auctions</span></h2>
+                <div class="filters">
+                    <div class="sorting">
+                        Sort
+                        <ul class="sorting-list hidden">
+                            <li class="sorting-item" id="priceas">Price ascending</li>
+                            <li class="sorting-item" id="pricedes">Price descending</li>
+                            <li class="sorting-item" id="nameas">Name ascending</li>
+                            <li class="sorting-item" id="namedes">Name descending</li>
+                        </ul>
+                    </div>
+                    <div class="filter-price">
+                        Price
+                        <div class="price-inputs hidden">
+                            <input type="text" class="price-from" placeholder="From">
+                            <input type="text" class="price-to" placeholder="To">
+                            <button type="button" name="apply" class="apply-btn">Apply</button>
+                            <button type="button" name="clear" class="clear-btn">Clear</button>
+                        </div>
+                    </div>
+                    <div class="filter-category">
+                        Category
+                        <ul class="category-list hidden">
+                            <li class="category-item">Laptop</li>
+                            <li class="category-item">Sweetshot</li>
+                            <li class="category-item">Boots</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="current-posts" id="posts"></div>
                 <div class="pagination"></div>
             </div>
