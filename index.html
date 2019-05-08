@@ -45,7 +45,7 @@
                                 <a href="#top" class="navbar-menu__link">Home</a>
                             </li>
                             <li class="navbar-menu__item">
-                                <a href="#" class="navbar-menu__link">Sell</a>
+                                <a id="toSell" class="navbar-menu__link">Sell</a>
                             </li>
                             <li class="navbar-menu__item">
                                 <a href="#buy" class="navbar-menu__link">Buy</a>
@@ -304,6 +304,26 @@
         </div>
         <div class="successreg">
             <div class="successfulreg"><i class="fas fa-check-circle"></i> Successful registration!</div>
+        </div>
+    </div>
+    <div class="sell" id="sell">
+        <div class="sell-modal">
+            <p class="sell-desc">Form to Selling</p>
+            <form class="sell-form" name="sell">
+                <input type="text" class="product-name" placeholder="Input your product name" required>
+                <input type="text" class="product-price" placeholder="Input your product start price ($)" required>
+                <input type="text" class="product-finalprice" placeholder="Input your product final price ($)" required>
+                <input type="text" class="product-step" placeholder="Input auction step ($)" required>
+                <input type="text" class="product-category" placeholder="Input your product category" required>
+                <input type="file" class="product-img" accept="image/*">
+                <button type="submit" name="sell" class="sell-btn">Sell</button>
+            </form>
+            <button type="button" name="close" class="closesell-btn">Close</button>
+        </div>
+    </div>
+    <div class="search-output">
+        <div class="search-modal">
+
         </div>
     </div>
     <a href="#top" id="toTop"><i class="fas fa-chevron-up"></i></a>

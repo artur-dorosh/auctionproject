@@ -1,6 +1,6 @@
 /* JSON */
 
-var products = JSON.parse('[ {"amountHours": 1, "picture": "img/prod1.jpg", "price": 123, "finishPrice": 471, "priceStep": 15, "prodName": "Apple iPhone 6s 32 Gb Silver", "category": "laptop"},{"amountHours": 2, "picture": "img/prod2.jpg", "price": 156, "finishPrice": 471, "priceStep": 15, "prodName": "Angle iPhone 6s 32 Gb Silver", "category": "sweetshot"},{"amountHours": 3, "picture": "img/prod4.jpg", "price": 17, "finishPrice": 471, "priceStep": 15, "prodName": "Whose iPhone 6s 32 Gb Silver", "category": "boots"} ]');
+var products = JSON.parse('[ {"amountHours": 1, "picture": "img/prod1.jpg", "price": 123, "finishPrice": 471, "priceStep": 15, "prodName": "Apple iPhone 6s 32 Gb Silver", "category": "laptop"},{"amountHours": 1, "picture": "img/prod1.jpg", "price": 123, "finishPrice": 471, "priceStep": 15, "prodName": "Apple iPhone 6s 32 Gb Silver", "category": "laptop"},{"amountHours": 1, "picture": "img/prod1.jpg", "price": 123, "finishPrice": 471, "priceStep": 15, "prodName": "Apple iPhone 6s 32 Gb Silver", "category": "laptop"},{"amountHours": 1, "picture": "img/prod1.jpg", "price": 123, "finishPrice": 471, "priceStep": 15, "prodName": "Apple iPhone 6s 32 Gb Silver", "category": "laptop"},{"amountHours": 2, "picture": "img/prod2.jpg", "price": 156, "finishPrice": 471, "priceStep": 15, "prodName": "Angle iPhone 6s 32 Gb Silver", "category": "sweetshot"},{"amountHours": 3, "picture": "img/prod4.jpg", "price": 17, "finishPrice": 471, "priceStep": 15, "prodName": "Whose iPhone 6s 32 Gb Silver", "category": "boots"} ]');
 localStorage.products = localStorage.products ? localStorage.products : JSON.stringify(products);
 
 var posts = document.getElementById("posts");
@@ -93,57 +93,60 @@ function setTimer(array) {
     }
 }
 
-/* pagination */
+/* sell */
 
-function paginate(array) {
-    var postsCount = array.length;
-    var postsPerPage = 3;
-    var pagesCount = Math.ceil(postsCount / postsPerPage);
+var toSell = document.getElementById("toSell");
 
-    var paginat = document.querySelector(".pagination");
-    var page = "";
+toSell.addEventListener("click", function() {
+    var sell = document.getElementById("sell");
+    var sellModal = document.querySelector(".sell-modal");
+    var selClose = document.querySelector(".closesell-btn");
 
-    for (var i = 0; i < pagesCount; i++) {
-        page += "<div class='pagination-item' onclick='pagination(event)' data-page=" + i * postsPerPage + " id='page" + (i + 1) + "'>" + (i + 1) + "</div>";
+    sell.style.display = "flex";
+    sellModal.classList.add("centered");
+    selClose.onclick = function() {
+        sell.style.display = "none";
+        sellModal.classList.remove("centered");
     }
-    paginat.innerHTML = page;
+});
 
-    var cur_posts = document.querySelectorAll(".current-post");
-    for (var i = 0; i < postsPerPage; i++) {
-        cur_posts[i].style.display = "block";
-        cur_posts[i].classList.add("fade");
-    }
+var selectCtg = document.querySelector(".ctg-select");
 
-    var active_page = document.getElementById("page1");
-    active_page.classList.add("active");
+for (var i = 0; i < JSON.parse(localStorage.products); i++) {
 
-    function pagination(event) {
-        var e = event || window.event;
-        var target = e.target;
-        var id = target.id;
-
-        if (target.tagName.toLowerCase() != "div") return;
-
-        var pageNumber = id.substr(4);
-        var data_page = +target.dataset.page;
-        active_page.classList.remove("active");
-        active_page = document.getElementById(id);
-        active_page.classList.add("active");
-
-        var j = 0;
-        for (var i = 0; i < cur_posts.length; i++) {
-            cur_posts[i].style.display = "none";
-            cur_posts[i].classList.remove("fade");
-        }
-
-        for (var i = data_page; i < cur_posts.length; i++) {
-            if (j >= postsPerPage) break;
-            cur_posts[i].style.display = "block";
-            cur_posts[i].classList.add("fade");
-            j++;
-        }
-    }
 }
+
+var sellBtn = document.querySelector(".sell-btn");
+
+sellBtn.addEventListener("click", function(e) {
+    var name = document.querySelector(".product-name").value;
+    var price = document.querySelector(".product-price").value;
+    var finalprice = document.querySelector(".product-finalprice").value;
+    var step = document.querySelector(".product-step").value;
+    var category = document.querySelector(".product-category").value.toLowerCase();
+    var img = document.querySelector(".product-img").value.substr(12);
+    var prods = JSON.parse(localStorage.products);
+
+    var result = {
+        "amountHours": 12,
+        "picture": "img/" + img,
+        "price": price,
+        "finishPrice": finalprice,
+        "priceStep": step,
+        "prodName": "" + name,
+        "category": "" + category
+    }
+
+
+    prods.unshift(result);
+    localStorage.products = JSON.stringify(prods);
+
+    generatePosts(JSON.parse(localStorage.products));
+    paginate(JSON.parse(localStorage.products));
+    setTimer(JSON.parse(localStorage.products));
+
+    location.reload();
+});
 
 /* registration */
 
@@ -377,6 +380,7 @@ pricedes.addEventListener("click", function(e) {
         result.sortByPriceReverse();
     }
     generatePosts(result);
+    paginate(result);
     setTimer(result);
 });
 priceas.addEventListener("click", function(e) {
@@ -385,6 +389,7 @@ priceas.addEventListener("click", function(e) {
         result.sortByPrice();
     }
     generatePosts(result);
+    paginate(result);
     setTimer(result);
 })
 namedes.addEventListener("click", function(e) {
@@ -393,6 +398,7 @@ namedes.addEventListener("click", function(e) {
         result.sortByNameReverse();
     }
     generatePosts(result);
+    paginate(result);
     setTimer(result);
 })
 nameas.addEventListener("click", function(e) {
@@ -401,6 +407,7 @@ nameas.addEventListener("click", function(e) {
         result.sortByName();
     }
     generatePosts(result);
+    paginate(result);
     setTimer(result);
 })
 
@@ -454,6 +461,7 @@ function priceFiltrate(from, to) {
     }
 
     generatePosts(result);
+    paginate(result);
     setTimer(result);
     priceFilter.click();
 }
@@ -504,9 +512,10 @@ function ctgFiltrate(ctgName, event) {
     }
 
     generatePosts(result);
+    paginate(result);
     setTimer(result);
 }
-/*
+
 document.addEventListener("click", function(e) {
     if (e.target != sorting) {
         if (!sortList.classList.contains("hidden")) {
@@ -528,7 +537,76 @@ document.addEventListener("click", function(e) {
         }
     }
 });
-*/
+
+/* pagination */
+
+function paginate(array) {
+    var postsCount = array.length;
+    var postsPerPage = 8;
+    var pagesCount = Math.ceil(postsCount / postsPerPage);
+
+    var cur_posts = document.querySelectorAll(".current-post");
+    var paginat = document.querySelector(".pagination");
+    var page = "";
+
+    for (var i = 0; i < pagesCount; i++) {
+        page += "<div class='pagination-item' onclick='pagination(event, " + postsPerPage + ")' data-page=" + i * postsPerPage + " id='page" + (i + 1) + "'>" + (i + 1) + "</div>";
+    }
+    paginat.innerHTML = page;
+
+    for (var i = 0; i < cur_posts.length; i++) {
+        cur_posts[i].style.display = "none";
+        cur_posts[i].classList.remove("fade");
+    }
+
+    if (postsCount < postsPerPage) {
+        postsPerPage = postsCount;
+    }
+    for (var i = 0; i < postsPerPage; i++) {
+        cur_posts[i].style.display = "block";
+        cur_posts[i].classList.add("fade");
+    }
+
+    var active_page = document.getElementById("page1");
+    active_page.classList.add("active");
+}
+
+function pagination(event, postsPerPage) {
+    var e = event || window.event;
+    var target = e.target;
+    var id = target.id;
+
+    if (target.tagName.toLowerCase() != "div") return;
+
+    var pagItems = document.querySelectorAll(".pagination-item");
+
+    for (var i = 0; i < pagItems.length; i++) {
+        if (pagItems[i].classList.contains("active")) {
+            var active_page = pagItems[i];
+        }
+    }
+
+    var pageNumber = id.substr(4);
+    var data_page = +target.dataset.page;
+    active_page.classList.remove("active");
+    active_page = document.getElementById(id);
+    active_page.classList.add("active");
+
+    var j = 0;
+    var cur_posts = document.querySelectorAll(".current-post");
+    for (var i = 0; i < cur_posts.length; i++) {
+        cur_posts[i].style.display = "none";
+        cur_posts[i].classList.remove("fade");
+    }
+
+    for (var i = data_page; i < cur_posts.length; i++) {
+        if (j >= postsPerPage) break;
+        cur_posts[i].style.display = "block";
+        cur_posts[i].classList.add("fade");
+        j++;
+    }
+}
+
 /* scrolling */
 
 var anchorLinks = document.querySelectorAll('[href^="#"]');
