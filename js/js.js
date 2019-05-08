@@ -98,6 +98,11 @@ function setTimer(array) {
 var toSell = document.getElementById("toSell");
 
 toSell.addEventListener("click", function() {
+    if (localStorage.signed == "false") {
+        sign.click();
+        return;
+    }
+
     var sell = document.getElementById("sell");
     var sellModal = document.querySelector(".sell-modal");
     var selClose = document.querySelector(".closesell-btn");
@@ -110,20 +115,15 @@ toSell.addEventListener("click", function() {
     }
 });
 
-var selectCtg = document.querySelector(".ctg-select");
-
-for (var i = 0; i < JSON.parse(localStorage.products); i++) {
-
-}
-
 var sellBtn = document.querySelector(".sell-btn");
 
 sellBtn.addEventListener("click", function(e) {
+    e.preventDefault();
     var name = document.querySelector(".product-name").value;
     var price = document.querySelector(".product-price").value;
     var finalprice = document.querySelector(".product-finalprice").value;
     var step = document.querySelector(".product-step").value;
-    var category = document.querySelector(".product-category").value.toLowerCase();
+    var category = document.querySelector(".select-ctg").value.toLowerCase();
     var img = document.querySelector(".product-img").value.substr(12);
     var prods = JSON.parse(localStorage.products);
 
@@ -300,8 +300,8 @@ sorting.addEventListener("click", function() {
 var sortItems = document.querySelectorAll(".sorting-item");
 
 localStorage.sorting = "";
-for (var i = 0; i < sortItems.length; i++) {
-    sortItems[i].addEventListener("click", function(e) {
+for (var k = 0; k < sortItems.length; k++) {
+    sortItems[k].addEventListener("click", function(e) {
         deactivate();
         if (localStorage.sorting == e.target.innerText.toLowerCase()) {
             e.target.classList.remove("active");
@@ -482,14 +482,14 @@ localStorage.category = "";
 for (var i = 0; i < ctgItems.length; i++) {
     ctgItems[i].addEventListener("click", function(e) {
         deactivateCtg();
-        if (localStorage.category == e.target.innerText.toLowerCase()) {
+        if (localStorage.category == e.target.innerHTML.toLowerCase()) {
             e.target.classList.remove("active");
             localStorage.category = "";
         } else {
             e.target.classList.add("active");
-            localStorage.category = e.target.innerText.toLowerCase();
+            localStorage.category = e.target.innerHTML.toLowerCase();
         }
-        ctgFiltrate(e.target.innerText.toLowerCase(), e);
+        ctgFiltrate(e.target.innerHTML.toLowerCase(), e);
     });
 }
 
@@ -537,6 +537,82 @@ document.addEventListener("click", function(e) {
         }
     }
 });
+
+/* submenu */
+
+var buyLinks = document.querySelectorAll(".buy-link");
+
+for (var m = 0; m < buyLinks.length; m++) {
+    buyLinks[m].addEventListener("click", function(e) {
+        document.getElementById("goToBuy").click();
+        for (var j = 0; j < ctgItems.length; j++) {
+            if (e.target.innerText == ctgItems[j].innerHTML) {
+                ctgItems[j].click();
+            }
+        }
+    });
+}
+
+/* slider */
+
+var slideIndex = 1;
+var slides = document.getElementsByClassName("slider");
+var dots = document.getElementsByClassName("dot");
+
+var intervalId = setInterval(nextSlide, 4000);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    if (n > slides.length)
+        slideIndex = 1;
+    if (n < 1)
+        slideIndex = slides.length;
+
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        slides[i].classList.remove("fade");
+    }
+
+    for (var i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+    }
+
+    slides[slideIndex-1].style.display = "block";
+    slides[slideIndex-1].classList.add("fade");
+    dots[slideIndex-1].classList.add("active");
+}
+
+function nextSlide(){
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        slides[i].classList.remove("fade");
+    }
+
+    for (var i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+    }
+
+	slides[slideIndex-1].style.display = 'none';
+	slides[slideIndex-1].classList.remove("fade");
+    dots[slideIndex-1].classList.remove("active");
+
+	slideIndex++;
+    if (slideIndex > slides.length)
+        slideIndex = 1;
+    if (slideIndex < 1)
+        slideIndex = slides.length;
+
+	slides[slideIndex-1].style.display = 'block';
+	slides[slideIndex-1].classList.add("fade");
+    dots[slideIndex-1].classList.add("active");
+}
 
 /* pagination */
 
@@ -610,8 +686,8 @@ function pagination(event, postsPerPage) {
 /* scrolling */
 
 var anchorLinks = document.querySelectorAll('[href^="#"]');
-for (var i = 0; i < anchorLinks.length; i++) {
-    anchorLinks[i].addEventListener('click', function(e) {
+for (var n = 0; n < anchorLinks.length; n++) {
+    anchorLinks[n].addEventListener('click', function(e) {
         e.preventDefault();
         var scrolled = window.pageYOffset || document.documentElement.scrollTop, hash = this.hash,
         topOfAnchor = document.querySelector(hash).getBoundingClientRect().top + scrolled, start = performance.now();
@@ -678,3 +754,4 @@ paginate(JSON.parse(localStorage.products));
 setTimer(JSON.parse(localStorage.products));
 
 isSigned();
+showSlides(slideIndex);

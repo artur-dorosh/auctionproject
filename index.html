@@ -23,12 +23,12 @@
                         <input type="text" class="search-line" placeholder="Search...">
                     </div>
                     <div class="register">
-                        <a href="#" class="btn btn-sign">Sign in</a>
-                        <a href="#" class="btn btn-reg">Register</a>
+                        <a class="btn btn-sign">Sign in</a>
+                        <a class="btn btn-reg">Register</a>
                     </div>
                     <div class="signed-user">
                         <span class="signed-user_name"></span>
-                        <a href="#" class="btn btn-logout">Logout</a>
+                        <a class="btn btn-logout">Logout</a>
                     </div>
                 </div>
             </div>
@@ -47,8 +47,13 @@
                             <li class="navbar-menu__item">
                                 <a id="toSell" class="navbar-menu__link">Sell</a>
                             </li>
-                            <li class="navbar-menu__item">
-                                <a href="#buy" class="navbar-menu__link">Buy</a>
+                            <li class="navbar-menu__item" id="toBuy">
+                                <a href="#buy" class="navbar-menu__link" id="goToBuy">Buy</a>
+                                <ul class="buy-list">
+                                    <li class="buy-item"><i class="fas fa-chevron-right"></i><a class="buy-link">Laptop</a></li>
+                                    <li class="buy-item"><i class="fas fa-chevron-right"></i><a class="buy-link">Sweetshot</a></li>
+                                    <li class="buy-item"><i class="fas fa-chevron-right"></i><a class="buy-link">Boots</a></li>
+                                </ul>
                             </li>
                             <li class="navbar-menu__item">
                                 <a href="#about" class="navbar-menu__link">About</a>
@@ -63,13 +68,38 @@
         </section>
     </header>
     <main>
-        <section class="slider">
-            <div class="slider-content">
-                <h1>
-                    The best place <span>to buy and sell!</span>
-                    <img src="img/arrow.png" alt="arrow" class="slider-content__img">
-                </h1>
-                <a href="#" class="btn slider-btn">Register<i class="fas fa-chevron-right"></i></a>
+        <section class="slider-group" onmouseover="clearInterval(intervalId);" onmouseout="intervalId = setInterval(nextSlide, 4000);">
+            <div class="slider">
+                <div class="slider-content">
+                    <h1>
+                        The best place <span>to buy and sell!</span>
+                        <img src="img/arrow.png" alt="arrow" class="slider-content__img">
+                    </h1>
+                    <a class="btn slider-btn">Register<i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="slider">
+                <div class="slider-content">
+                    <h1>
+                        Contact with us <span>now!</span>
+                    </h1>
+                    <a href="#contacts"class="btn slider-btn">Contact<i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="slider">
+                <div class="slider-content">
+                    <h1>
+                        How it <span>works?</span>
+                    </h1>
+                    <a href="#works" class="btn slider-btn">Find out<i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <button class="prev" type="button" name="button" onclick="plusSlides(-1)"><i class="fas fa-chevron-left"></i></button>
+            <button class="next" type="button" name="button" onclick="plusSlides(1)"><i class="fas fa-chevron-right"></i></button>
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
             </div>
         </section>
         <section class="finished">
@@ -162,7 +192,7 @@
                 <div class="pagination"></div>
             </div>
         </section>
-        <section class="works">
+        <section class="works" id="works">
             <div class="wrapper">
                 <h2>How <span>it Works</span></h2>
                 <div class="works-items">
@@ -280,6 +310,7 @@
     </footer>
     <div class="signin" id="signin">
         <div class="signin-modal">
+            <p class="signin-desc">Sign In Form</p>
             <form class="signin-form">
                 <input type="text" class="loginin" placeholder="Login" required>
                 <input type="password" class="passwordin" placeholder="Password" required>
@@ -295,6 +326,7 @@
     </div>
     <div class="registerin" id="registerin">
         <div class="register-modal">
+            <p class="register-desc">Register Form</p>
             <form class="register-form">
                 <input type="text" class="loginreg" placeholder="Login" required>
                 <input type="password" class="passwordreg" placeholder="Password" required>
@@ -314,7 +346,11 @@
                 <input type="text" class="product-price" placeholder="Input your product start price ($)" required>
                 <input type="text" class="product-finalprice" placeholder="Input your product final price ($)" required>
                 <input type="text" class="product-step" placeholder="Input auction step ($)" required>
-                <input type="text" class="product-category" placeholder="Input your product category" required>
+                <select class="select-ctg" name="select-ctg">
+                    <option value="laptop">Laptop</option>
+                    <option value="sweetshot">Sweetshot</option>
+                    <option value="boots">Boots</option>
+                </select>
                 <input type="file" class="product-img" accept="image/*">
                 <button type="submit" name="sell" class="sell-btn">Sell</button>
             </form>
