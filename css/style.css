@@ -1228,14 +1228,13 @@ h2 > span {
     font-weight: 600;
     line-height: 1.5;
     text-decoration: none;
+    cursor: pointer;
 }
 .finished-product_link:hover {
     color: #ffd613;
     -webkit-transition: 0.25s ease-in-out;
     transition: 0.25s ease-in-out;
 }
-
-
 
 
 
@@ -1930,7 +1929,12 @@ h2 > span {
     border-top: 7px solid #ffd613;
 }
 
+.footer-panel > .wrapper {
+    display: flex;
+}
+
 .rights {
+    margin-right: 20px;
     color: #888;
     font-size: 16px;
 }
