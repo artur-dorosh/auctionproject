@@ -1,6 +1,6 @@
 /* JSON */
 
-var products = JSON.parse('[ {"amountHours": 1, "picture": "img/prod1.jpg", "price": 123, "finishPrice": 471, "priceStep": 15, "prodName": "Apple iPhone 6s 32 Gb Silver", "category": "laptop"},{"amountHours": 1, "picture": "img/prod1.jpg", "price": 123, "finishPrice": 471, "priceStep": 15, "prodName": "Apple iPhone 6s 32 Gb Silver", "category": "laptop"},{"amountHours": 1, "picture": "img/prod1.jpg", "price": 123, "finishPrice": 471, "priceStep": 15, "prodName": "Apple iPhone 6s 32 Gb Silver", "category": "laptop"},{"amountHours": 1, "picture": "img/prod1.jpg", "price": 123, "finishPrice": 471, "priceStep": 15, "prodName": "Apple iPhone 6s 32 Gb Silver", "category": "laptop"},{"amountHours": 2, "picture": "img/prod2.jpg", "price": 156, "finishPrice": 471, "priceStep": 15, "prodName": "Angle iPhone 6s 32 Gb Silver", "category": "sweetshot"},{"amountHours": 3, "picture": "img/prod4.jpg", "price": 17, "finishPrice": 471, "priceStep": 15, "prodName": "Whose iPhone 6s 32 Gb Silver", "category": "boots"} ]');
+var products = JSON.parse('[ {"amountHours": 1, "picture": "img/prod1.jpg", "price": 123, "finishPrice": 471, "priceStep": 15, "prodName": "Apple iPhone 6s 32 Gb Silver", "description": "dsgdsg dsghdsfgh sdf gdfhs tr hrts hrt hrth tsr hrst hTest description description description description description", "category": "laptop"},{"amountHours": 1, "picture": "img/prod1.jpg", "price": 123, "finishPrice": 471, "priceStep": 15, "prodName": "Apple iPhone 6s 32 Gb Silver", "description": "dsgdsg dsghdsfgh sdf gdfhs tr hrts hrt hrth tsr hrst hTest description description description description description", "category": "laptop"},{"amountHours": 1, "picture": "img/prod1.jpg", "price": 123, "finishPrice": 471, "priceStep": 15, "prodName": "Apple iPhone 6s 32 Gb Silver", "description": "dsgdsg dsghdsfgh sdf gdfhs tr hrts hrt hrth tsr hrst hTest description description description description description", "category": "laptop"},{"amountHours": 1, "picture": "img/prod1.jpg", "price": 123, "finishPrice": 471, "priceStep": 15, "prodName": "Apple iPhone 6s 32 Gb Silver", "description": "dsgdsg dsghdsfgh sdf gdfhs tr hrts hrt hrth tsr hrst hTest description description description description description", "category": "laptop"},{"amountHours": 2, "picture": "img/prod2.jpg", "price": 156, "finishPrice": 471, "priceStep": 15, "prodName": "Angle iPhone 6s 32 Gb Silver", "description": "dsgdsg dsghdsfgh sdf gdfhs tr hrts hrt hrth tsr hrst hTest description description description description description", "category": "sweetshot"},{"amountHours": 3, "picture": "img/prod4.jpg", "price": 17, "finishPrice": 471, "priceStep": 15, "prodName": "Whose iPhone 6s 32 Gb Silver", "description": "dsgdsg dsghdsfgh sdf gdfhs tr hrts hrt hrth tsr hrst hTest description description description description description", "category": "boots"} ]');
 localStorage.products = localStorage.products ? localStorage.products : JSON.stringify(products);
 
 var posts = document.getElementById("posts");
@@ -36,19 +36,21 @@ function generatePosts(array) {
         priceStep.classList.add("post-step");
         priceStep.innerText = array[i]["priceStep"];
 
+        var prodBlock = document.createElement("div");
+        prodBlock.classList.add("prod-block");
         var prodName = document.createElement("a");
         prodName.classList.add("post-name");
-        prodName.setAttribute("href", "#");
         prodName.innerText = "" + array[i]["prodName"];
+        var prodDesc = document.createElement("p");
+        prodDesc.classList.add("post-desc");
+        prodDesc.innerText = "" + array[i]["description"];
 
         var bid = document.createElement("a");
         bid.classList.add("post-submit");
-        bid.setAttribute("href", "#");
         bid.innerText = "Submit a bid";
 
         var buy = document.createElement("a");
         buy.classList.add("post-buy");
-        buy.setAttribute("href", "#");
         buy.innerText = "Buy now";
 
         countdown.appendChild(amount);
@@ -57,7 +59,9 @@ function generatePosts(array) {
         price.appendChild(finishPrice);
         post.appendChild(price);
         post.appendChild(priceStep);
-        post.appendChild(prodName);
+        prodBlock.appendChild(prodName);
+        prodBlock.appendChild(prodDesc);
+        post.appendChild(prodBlock);
         post.appendChild(bid);
         post.appendChild(buy);
 
@@ -74,8 +78,12 @@ var start = setInterval(function() {
 
 function setTimer(array) {
     var ctdown = document.querySelectorAll('.countdown-amount');
+    var searchCtdown = document.querySelectorAll('.ctdamount-search');
     for (var i = 0; i < ctdown.length; i++) {
         timer(ctdown[i], array[i].amountHours);
+    }
+    for (var i = 0; i < searchCtdown.length; i++) {
+        timer(searchCtdown[i], array[i].amountHours);
     }
 
     function timer(item, time) {
@@ -612,6 +620,123 @@ function nextSlide(){
 	slides[slideIndex-1].style.display = 'block';
 	slides[slideIndex-1].classList.add("fade");
     dots[slideIndex-1].classList.add("active");
+}
+
+/* search */
+
+function find(query) {
+    var prods = JSON.parse(localStorage.products), result = [];
+
+    var desc = document.querySelector(".search-desc");
+    desc.innerText = 'Search Output Form. Your query "' + query + '"';
+
+    for (var i = 0; i < prods.length; i++) {
+        if (prods[i].prodName.toLowerCase().indexOf(query.toLowerCase()) >= 0 || prods[i].description.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
+            result.push(prods[i]);
+        }
+    }
+
+    return result;
+}
+
+var searchBtn = document.querySelector(".search-btn");
+var searchLine = document.querySelector(".search-line");
+var output = document.querySelector(".search-output");
+
+searchLine.addEventListener("keydown", function(e) {
+    if (e.keyCode === 13) {
+        searchBtn.click();
+    }
+});
+
+searchBtn.addEventListener("click", function() {
+    var query = document.querySelector(".search-line").value;
+
+    output.style.display = "block";
+    generateSearchOutput(find(query.toLowerCase()));
+});
+
+var closeSearch = document.querySelector(".closesearch-btn");
+
+closeSearch.addEventListener("click", function() {
+    output.style.display = "none";
+});
+
+var searchPosts = document.getElementById("search-posts")
+
+function generateSearchOutput(array) {
+    searchPosts.innerHTML = "";
+    for (var i = 0; i < array.length; i++) {
+        var post = document.createElement("div");
+        post.classList.add("search-post");
+
+        var countdown = document.createElement("div");
+        countdown.classList.add("search-countdown");
+
+        var amount = document.createElement("span");
+        amount.classList.add("ctdamount-search");
+        var date = new Date(null);
+        date.setSeconds(array[i]["amountHours"]*3600 - secondsFromStart);
+        var result = date.toISOString().substr(11, 8);
+        amount.innerText = result;
+
+        var picture = document.createElement("img");
+        picture.classList.add("search-img");
+        picture.setAttribute("src", "" + array[i]["picture"]);
+
+        var price = document.createElement("p");
+        price.classList.add("search-price");
+        price.innerText = "Price: $" + array[i]["price"];
+        var finishPrice = document.createElement("span");
+        finishPrice.classList.add("search-finish");
+        finishPrice.innerText = "Final: $" + array[i]["finishPrice"];
+
+        var priceStep = document.createElement("p");
+        priceStep.classList.add("post-step");
+        priceStep.innerText = array[i]["priceStep"];
+
+        var prodName = document.createElement("a");
+        prodName.classList.add("search-name");
+        prodName.innerText = "" + array[i]["prodName"];
+
+        var prodDescription = document.createElement("p");
+        prodDescription.classList.add("search-description");
+        prodDescription.innerText = "" + array[i]["description"];
+
+        var bid = document.createElement("a");
+        bid.classList.add("post-submit");
+        bid.innerText = "Submit a bid";
+
+        var buy = document.createElement("a");
+        buy.classList.add("post-buy");
+        buy.innerText = "Buy now";
+
+        var photoBlock = document.createElement("div");
+        photoBlock.classList.add("photo-block");
+        var buyBlock = document.createElement("div");
+        buyBlock.classList.add("buy-block");
+        var buyBtns = document.createElement("div");
+        buyBtns.classList.add("buy-btns");
+        var buyDesc = document.createElement("div");
+        buyDesc.classList.add("buy-desc");
+
+        countdown.appendChild(amount);
+        photoBlock.appendChild(countdown);
+        photoBlock.appendChild(picture);
+        post.appendChild(photoBlock);
+        price.appendChild(finishPrice);
+        buyBlock.appendChild(price);
+        buyBlock.appendChild(priceStep);
+        buyBtns.appendChild(bid);
+        buyBtns.appendChild(buy);
+        buyBlock.appendChild(buyBtns);
+        post.appendChild(buyBlock);
+        buyDesc.appendChild(prodName);
+        buyDesc.appendChild(prodDescription);
+        post.appendChild(buyDesc);
+
+        searchPosts.appendChild(post);
+    }
 }
 
 /* pagination */

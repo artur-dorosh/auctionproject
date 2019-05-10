@@ -80,40 +80,6 @@ h5 {
     transition: 0.25s ease-in-out;
 }
 
-.search {
-    width: 45%;
-}
-
-.search-line {
-    padding-left: 15px;
-    width: 100%;
-    height: 30px;
-    font-size: 15px;
-    color: #fff;
-    background-color: rgba(150, 150, 150, .3);
-    outline: none;
-    border: 1.5px solid transparent;
-    border-radius: 20px;
-}
-.search-line:focus {
-    border: 1.5px solid #ffd613;
-    -webkit-transition: 0.25s ease-in-out;
-    transition: 0.25s ease-in-out;
-}
-
-/*.search-line::-webkit-input-placeholder {
-    color:#fff;
-}
-.search-line::-moz-placeholder {
-    color:#fff;
-}
-.search-line:-moz-placeholder {
-    color:#fff;
-}
-.search-line:-ms-input-placeholder {
-    color:#fff;
-}*/
-
 .register {
     display: block;
 }
@@ -478,7 +444,8 @@ h5 {
 
 .sell-desc,
 .register-desc,
-.signin-desc {
+.signin-desc,
+.search-desc {
     margin-bottom: 20px;
     font-size: 30px;
     font-weight: bold;
@@ -544,6 +511,136 @@ h5 {
     color: #ffd613;
     background-color: #000;
     transition: 0.25s ease-in-out;
+}
+
+    /* search */
+
+.search {
+    width: 45%;
+}
+
+.search-line {
+    padding-left: 15px;
+    width: 100%;
+    height: 30px;
+    font-size: 15px;
+    color: #fff;
+    background-color: rgba(150, 150, 150, .3);
+    outline: none;
+    border: 1.5px solid transparent;
+    border-radius: 20px;
+}
+.search-line:focus {
+    border: 1.5px solid #ffd613;
+    -webkit-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+}
+
+.search-btn {
+    display: none;
+}
+
+.search-output {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+}
+
+.search-modal {
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    padding: 25px 50px 0;
+    background-color: #fff;
+    border-radius: 25px;
+}
+
+.search-post {
+    display: flex;
+    margin: 30px;
+}
+
+.photo-block {
+    position: relative;
+    width: 270px;
+}
+
+.search-countdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 135px;
+    background-color: #e4e4e4;
+    border-radius: 5px;
+}
+.search-countdown::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 34px 9px 0 9px;
+    border-color: #e4e4e4 transparent transparent transparent;
+    right: 6px;
+    bottom: -23px;
+    transform: rotate(-41deg);
+}
+
+.ctdamount-search {
+    padding: 7px 13px;
+    color: rgba(0, 0, 0, 0.55);
+    font-family: "Montserrat", sans-serif;
+    font-size: 22px;
+    line-height: 1.2;
+}
+
+.search-img {
+    width: 100%;
+}
+
+.search-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.search-finish {
+    margin: 30px 0;
+}
+
+.buy-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: s
+}
+
+.search-name {
+    display: block;
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-decoration: none;
+}
+
+.search-description {
+    margin-top: 20px;
+    height: 50%;
 }
 
     /* signin */
@@ -687,7 +784,8 @@ h5 {
     transition: 0.25s ease-in-out;
 }
 
-.close-btn {
+.close-btn,
+.closesearch-btn {
     position: absolute;
     right: 30px; top: 20px;
     display: -webkit-box;
@@ -709,7 +807,8 @@ h5 {
     cursor: pointer;
     outline: none;
 }
-.close-btn:hover {
+.close-btn:hover,
+.closesearch-btn:hover {
     color: #ffd613;
     background-color: #000;
     -webkit-transition: 0.25s ease-in-out;
@@ -1011,7 +1110,6 @@ h5 {
     display: flex;
     position: absolute;
     bottom: 20px; left: 50%;
-    z-index: 9999;
     transform: translate(-50%);
 }
 
@@ -1439,6 +1537,10 @@ h2 > span {
     vertical-align: top;
 }
 
+.prod-block {
+    position: relative;
+}
+
 .post-name {
     display: block;
     margin-top: 6px;
@@ -1447,9 +1549,29 @@ h2 > span {
     font-weight: 600;
     line-height: 1.3;
     text-decoration: none;
+    cursor: pointer;
 }
 .post-name:hover {
     text-decoration: underline;
+}
+
+.post-desc {
+    position: absolute;
+    bottom: 50px;
+    display: none;
+    padding: 10px 5px;
+    background-color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.post-name:hover + .post-desc {
+    display: block;
+}
+
+.post-desc:hover {
+    display: block;
 }
 
 .pagination {
