@@ -1,6 +1,6 @@
 /* JSON */
 
-var products = JSON.parse('[ {"amountHours": 4, "picture": "img/prod1.jpg", "price": 123, "finishPrice": 471, "priceStep": 15, "prodName": "Apple iPhone 6s 32 Gb Silver", "description": "dsgdsg dsghdsfgh sdf gdfhs tr hrts hrt hrth tsr hrst hTest description description description description description", "category": "laptop"},{"amountHours": 1, "picture": "img/prod1.jpg", "price": 123, "finishPrice": 471, "priceStep": 15, "prodName": "Apple iPhone 6s 32 Gb Silver", "description": "dsgdsg dsghdsfgh sdf gdfhs tr hrts hrt hrth tsr hrst hTest description description description description description", "category": "laptop"},{"amountHours": 1, "picture": "img/prod1.jpg", "price": 123, "finishPrice": 471, "priceStep": 15, "prodName": "Apple iPhone 6s 32 Gb Silver", "description": "dsgdsg dsghdsfgh sdf gdfhs tr hrts hrt hrth tsr hrst hTest description description description description description", "category": "laptop"},{"amountHours": 1, "picture": "img/prod1.jpg", "price": 123, "finishPrice": 471, "priceStep": 15, "prodName": "Apple iPhone 6s 32 Gb Silver", "description": "dsgdsg dsghdsfgh sdf gdfhs tr hrts hrt hrth tsr hrst hTest description description description description description", "category": "laptop"},{"amountHours": 2, "picture": "img/prod2.jpg", "price": 156, "finishPrice": 471, "priceStep": 15, "prodName": "Angle iPhone 6s 32 Gb Silver", "description": "dsgdsg dsghdsfgh sdf gdfhs tr hrts hrt hrth tsr hrst hTest description description description description description", "category": "sweetshot"},{"amountHours": 3, "picture": "img/prod4.jpg", "price": 17, "finishPrice": 471, "priceStep": 15, "prodName": "Whose iPhone 6s 32 Gb Silver", "description": "dsgdsg dsghdsfgh sdf gdfhs tr hrts hrt hrth tsr hrst hTest description description description description description", "category": "boots"} ]');
+var products = JSON.parse('[ {"amountHours": 5, "picture": "img/prod1.jpg", "price": 1500, "finishPrice": 2300, "priceStep": 20, "prodName": "HP EliteBook x360 1030 G2", "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum soluta atque, hic consectetur fugiat tempora ipsa sequi id quod. Architecto atque nisi nobis doloribus, magnam saepe ipsam expedita laborum nostrum.", "category": "computers"},{"amountHours": 4, "picture": "img/prod2.jpg", "price": 512, "finishPrice": 730, "priceStep": 5, "prodName": "Asus Vivo AiO V241ICUK-BA091D Black", "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum soluta atque, hic consectetur fugiat tempora ipsa sequi id quod. Architecto atque nisi nobis doloribus, magnam saepe ipsam expedita laborum nostrum.", "category": "computers"},{"amountHours": 3, "picture": "img/prod7.jpg", "price": 420, "finishPrice": 510, "priceStep": 5, "prodName": "GORENJE K 5341 WF", "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum soluta atque, hic consectetur fugiat tempora ipsa sequi id quod. Architecto atque nisi nobis doloribus, magnam saepe ipsam expedita laborum nostrum.", "category": "home appliances"},{"amountHours": 2, "picture": "img/prod4.jpg", "price": 1030, "finishPrice": 1400, "priceStep": 10, "prodName": "Apple Mac mini Late 2018", "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum soluta atque, hic consectetur fugiat tempora ipsa sequi id quod. Architecto atque nisi nobis doloribus, magnam saepe ipsam expedita laborum nostrum.", "category": "computers"},{"amountHours": 6, "picture": "img/prod5.jpg", "price": 258, "finishPrice": 360, "priceStep": 15, "prodName": "Billieblush Girls Blue Fluffy Cardigan", "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum soluta atque, hic consectetur fugiat tempora ipsa sequi id quod. Architecto atque nisi nobis doloribus, magnam saepe ipsam expedita laborum nostrum.", "category": "clothes"},{"amountHours": 7, "picture": "img/prod6.jpg", "price": 320, "finishPrice": 750, "priceStep": 8, "prodName": "Lacoste Lerond Leather Trainers", "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum soluta atque, hic consectetur fugiat tempora ipsa sequi id quod. Architecto atque nisi nobis doloribus, magnam saepe ipsam expedita laborum nostrum.", "category": "shoes"}, {"amountHours": 10, "picture": "img/prod7.jpg", "price": 500, "finishPrice": 580, "priceStep": 10, "prodName": "BOSCH SMS 40 D 18 EU", "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum soluta atque, hic consectetur fugiat tempora ipsa sequi id quod. Architecto atque nisi nobis doloribus, magnam saepe ipsam expedita laborum nostrum.", "category": "home appliances"}, {"amountHours": 12, "picture": "img/finish4.jpg", "price": 200, "finishPrice": 270, "priceStep": 5, "prodName": "Pier One Classic Dark Blue Ankle Boots", "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum soluta atque, hic consectetur fugiat tempora ipsa sequi id quod. Architecto atque nisi nobis doloribus, magnam saepe ipsam expedita laborum nostrum.", "category": "shoes"}, {"amountHours": 15, "picture": "img/prod8.jpg", "price": 124, "finishPrice": 200, "priceStep": 10, "prodName": "Tally Weijl SJASUDAMDAM-EBY 34", "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum soluta atque, hic consectetur fugiat tempora ipsa sequi id quod. Architecto atque nisi nobis doloribus, magnam saepe ipsam expedita laborum nostrum.", "category": "clothes"}, {"amountHours": 5, "picture": "img/finish2.jpg", "price": 780, "finishPrice": 920, "priceStep": 17, "prodName": "Apple iPad Pro 11” Wi-Fi 64GB Silver", "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum soluta atque, hic consectetur fugiat tempora ipsa sequi id quod. Architecto atque nisi nobis doloribus, magnam saepe ipsam expedita laborum nostrum.", "category": "computers"} ]');
 localStorage.products = localStorage.products ? localStorage.products : JSON.stringify(products);
 
 var posts = document.getElementById("posts");
@@ -17,7 +17,7 @@ function generatePosts(array) {
         var amount = document.createElement("span");
         amount.classList.add("countdown-amount");
         var date = new Date(null);
-        date.setSeconds(array[i]["amountHours"]*3600 - secondsFromStart);
+        date.setSeconds(array[i]["amountHours"]*3600 - localStorage.secondsFromStart);
         var result = date.toISOString().substr(11, 8);
         amount.innerText = result;
 
@@ -71,23 +71,27 @@ function generatePosts(array) {
 
 /* timer */
 
-var secondsFromStart = 0;
+localStorage.secondsFromStart = 0;
+localStorage.secondsFromStart = localStorage.secondsFromStart ? localStorage.secondsFromStart : 0;
 var start = setInterval(function() {
-    secondsFromStart++;
+    localStorage.secondsFromStart++;
 }, 1000);
 
 function setTimer(array) {
     var ctdown = document.querySelectorAll('.countdown-amount');
     var searchCtdown = document.querySelectorAll('.ctdamount-search');
-    for (var i = 0; i < ctdown.length; i++) {
-        timer(ctdown[i], array[i].amountHours);
-    }
-    for (var i = 0; i < searchCtdown.length; i++) {
-        timer(searchCtdown[i], array[i].amountHours);
+    if (searchCtdown.length > 0) {
+        for (var j = 0; j < searchCtdown.length; j++) {
+            timer(searchCtdown[j], array[j].amountHours);
+        }
+    } else {
+        for (var i = 0; i < ctdown.length; i++) {
+            timer(ctdown[i], array[i].amountHours);
+        }
     }
 
     function timer(item, time) {
-        var count = time * 3600 - secondsFromStart;
+        var count = time * 3600 - localStorage.secondsFromStart;
         var interval = setInterval(function() {
             var newTime = new Date(null);
             newTime.setSeconds(count);
@@ -98,6 +102,254 @@ function setTimer(array) {
                 clearInterval(interval);
             }
         }, 1000);
+    }
+}
+
+/* buy */
+
+function buy() {
+    var submitBid = document.querySelectorAll(".post-submit");
+    var buyNow = document.querySelectorAll(".post-buy");
+    localStorage.buyCart = localStorage.buyCart ? localStorage.buyCart : JSON.stringify([]);
+    localStorage.bidCart = localStorage.bidCart ? localStorage.bidCart : JSON.stringify([]);
+
+    for (var l = 0; l < submitBid.length; l++) {
+        submitBid[l].addEventListener("click", function(e) {
+            if (localStorage.signed == "false") {
+                sign.click();
+                return;
+            }
+
+            var posts = document.querySelectorAll(".current-post"), postNumber = 0;
+
+            for (var i = 0; i < posts.length; i++) {
+                if (posts[i] == e.path[1]) {
+                    var prods = JSON.parse(localStorage.products);
+
+                    for (var j = 0; j < prods.length; j++) {
+                        if (prods[j].prodName == e.path[1].children[4].innerText) {
+                            postNumber = j;
+
+                            var cart = JSON.parse(localStorage.bidCart), flag = true;
+                            for (var m = 0; m < cart.length; m++) {
+                                if (cart[m].prodName == prods[j].prodName) {
+                                    cart[m].price += cart[m].priceStep;
+                                    cart[m].finishPrice += Math.floor(cart[m].priceStep / 2);
+                                    localStorage.bidCart = JSON.stringify(cart);
+                                    flag = false;
+                                    break;
+                                }
+                            }
+                            if (flag) {
+                                cart.push(prods[j]);
+                                localStorage.bidCart = JSON.stringify(cart);
+                            }
+
+                            break;
+                        }
+                    }
+
+                    break;
+                }
+            }
+
+            var prods = JSON.parse(localStorage.products);
+            prods[postNumber].price += prods[postNumber].priceStep;
+            prods[postNumber].finishPrice += Math.floor(prods[postNumber].priceStep / 2);
+            localStorage.products = JSON.stringify(prods);
+            location.reload();
+        });
+
+        buyNow[l].addEventListener("click", function(e) {
+            if (localStorage.signed == "false") {
+                sign.click();
+                return;
+            }
+
+            var posts = document.querySelectorAll(".current-post");
+            var prods = JSON.parse(localStorage.products);
+
+            for (var i = 0; i < posts.length; i++) {
+                if (posts[i] == e.path[1]) {
+                    var prods = JSON.parse(localStorage.products);
+
+                    for (var j = 0; j < prods.length; j++) {
+                        if (prods[j].prodName == e.path[1].children[4].innerText) {
+
+                            var cart = JSON.parse(localStorage.buyCart), flag = true;
+                            for (var m = 0; m < cart.length; m++) {
+                                if (cart[m].prodName == prods[j].prodName) {
+                                    flag = false;
+                                }
+                            }
+                            if (flag) {
+                                cart.push(prods[j]);
+                                localStorage.buyCart = JSON.stringify(cart);
+                            }
+
+
+                            break;
+                        }
+                    }
+
+                    break;
+                }
+            }
+
+            isSigned();
+        });
+    }
+}
+
+var buyIcon = document.querySelector(".fa-shopping-cart");
+var buyCartPosts = document.getElementById("buy-posts");
+
+buyIcon.addEventListener("click", function() {
+    var buy = document.querySelector(".buy-cart");
+    var buyClose = document.querySelector(".closebuy-btn");
+
+    buy.style.display = "block";
+    generateBuyCart(JSON.parse(localStorage.buyCart), buyCartPosts);
+    buyClose.onclick = function() {
+        buy.style.display = "none";
+    }
+});
+
+var bidIcon = document.querySelector(".fa-gavel");
+var bidCartPosts = document.getElementById("bid-posts");
+
+bidIcon.addEventListener("click", function() {
+    var bid = document.querySelector(".bid-cart");
+    var bidClose = document.querySelector(".closebid-btn");
+
+    bid.style.display = "block";
+    generateBidCart(JSON.parse(localStorage.bidCart), bidCartPosts);
+    setTimer(JSON.parse(localStorage.bidCart));
+    bidClose.onclick = function() {
+        bid.style.display = "none";
+    }
+});
+
+function generateBidCart(array, block) {
+    block.innerHTML = "";
+    for (var i = 0; i < array.length; i++) {
+        var post = document.createElement("div");
+        post.classList.add("search-post");
+
+        var countdown = document.createElement("div");
+        countdown.classList.add("search-countdown");
+
+        var amount = document.createElement("span");
+        amount.classList.add("ctdamount-search");
+        var date = new Date(null);
+        date.setSeconds(array[i]["amountHours"]*3600 - localStorage.secondsFromStart);
+        var result = date.toISOString().substr(11, 8);
+        amount.innerText = result;
+
+        var picture = document.createElement("img");
+        picture.classList.add("search-img");
+        picture.setAttribute("src", "" + array[i]["picture"]);
+
+        var price = document.createElement("p");
+        price.classList.add("search-price");
+        price.innerText = "Price: $" + array[i]["price"];
+        var finishPrice = document.createElement("span");
+        finishPrice.classList.add("search-finish");
+        finishPrice.innerText = "Final: $" + array[i]["finishPrice"];
+
+        var prodName = document.createElement("a");
+        prodName.classList.add("search-name");
+        prodName.innerText = "" + array[i]["prodName"];
+
+        var prodDescription = document.createElement("p");
+        prodDescription.classList.add("search-description");
+        prodDescription.innerText = "" + array[i]["description"];
+
+        var photoBlock = document.createElement("div");
+        photoBlock.classList.add("photo-block");
+        var buyBlock = document.createElement("div");
+        buyBlock.classList.add("buy-block");
+        var buyDesc = document.createElement("div");
+        buyDesc.classList.add("buy-desc");
+
+        countdown.appendChild(amount);
+        photoBlock.appendChild(countdown);
+        photoBlock.appendChild(picture);
+        post.appendChild(photoBlock);
+        price.appendChild(finishPrice);
+        buyBlock.appendChild(price);
+        post.appendChild(buyBlock);
+        buyDesc.appendChild(prodName);
+        buyDesc.appendChild(prodDescription);
+        post.appendChild(buyDesc);
+
+        block.appendChild(post);
+    }
+}
+
+function generateBuyCart(array, block) {
+    block.innerHTML = "";
+
+    if (array.length > 0) {
+        createPosts(array, block);
+
+        var total = document.createElement("p"), result = 0;
+        total.classList.add("total");
+
+        var toPay = document.createElement("button");
+        toPay.classList.add("pay");
+        toPay.innerText = "Pay";
+
+        for (var i = 0; i < array.length; i++) {
+            result += array[i]["finishPrice"];
+        }
+        total.innerText = "Total: " + result;
+        block.appendChild(total);
+        block.appendChild(toPay);
+    }
+}
+
+function createPosts(array, block) {
+    for (var i = 0; i < array.length; i++) {
+        var post = document.createElement("div");
+        post.classList.add("search-post");
+
+        var picture = document.createElement("img");
+        picture.classList.add("search-img");
+        picture.setAttribute("src", "" + array[i]["picture"]);
+
+        var price = document.createElement("p");
+        price.classList.add("search-price");
+        price.innerText = "Price: $" + array[i]["price"];
+        var finishPrice = document.createElement("span");
+        finishPrice.classList.add("search-finish");
+        finishPrice.innerText = "Final: $" + array[i]["finishPrice"];
+
+        var prodName = document.createElement("a");
+        prodName.classList.add("search-name");
+        prodName.innerText = "" + array[i]["prodName"];
+
+        var prodDescription = document.createElement("p");
+        prodDescription.classList.add("search-description");
+        prodDescription.innerText = "" + array[i]["description"];
+
+        var photoBlock = document.createElement("div");
+        photoBlock.classList.add("photo-block");
+        var buyBlock = document.createElement("div");
+        buyBlock.classList.add("buy-block");
+        var buyDesc = document.createElement("div");
+        buyDesc.classList.add("buy-desc");
+
+        photoBlock.appendChild(picture);
+        post.appendChild(photoBlock);
+        price.appendChild(finishPrice);
+        buyBlock.appendChild(price);
+        post.appendChild(buyBlock);
+        buyDesc.appendChild(prodName);
+        buyDesc.appendChild(prodDescription);
+        post.appendChild(buyDesc);
+
+        block.appendChild(post);
     }
 }
 
@@ -128,6 +380,7 @@ var sellBtn = document.querySelector(".sell-btn");
 sellBtn.addEventListener("click", function(e) {
     e.preventDefault();
     var name = document.querySelector(".product-name").value;
+    var desc = document.querySelector(".product-desc").value;
     var price = document.querySelector(".product-price").value;
     var finalprice = document.querySelector(".product-finalprice").value;
     var step = document.querySelector(".product-step").value;
@@ -135,15 +388,26 @@ sellBtn.addEventListener("click", function(e) {
     var img = document.querySelector(".product-img").value.substr(12);
     var prods = JSON.parse(localStorage.products);
 
+    price = +price;
+    finalprice = +finalprice;
+    step = +step;
+
     var result = {
         "amountHours": 12,
-        "picture": "img/" + img,
         "price": price,
         "finishPrice": finalprice,
         "priceStep": step,
         "prodName": "" + name,
-        "category": "" + category
+        "category": "" + category,
+        "description": "" + desc
     }
+
+    if (img) {
+        result["picture"] = "img/" + img;
+    } else {
+        result["picture"] = "img/default.png";
+    }
+
 
 
     prods.unshift(result);
@@ -152,6 +416,7 @@ sellBtn.addEventListener("click", function(e) {
     generatePosts(JSON.parse(localStorage.products));
     paginate(JSON.parse(localStorage.products));
     setTimer(JSON.parse(localStorage.products));
+    buy();
 
     location.reload();
 });
@@ -228,14 +493,30 @@ function isSigned() {
     var register = document.querySelector(".register");
     var signed = document.querySelector(".signed-user");
     var userWelc = document.querySelector(".signed-user_name");
+    var cart = document.querySelector(".cart");
 
     if (localStorage.signed === "true") {
         register.style.display = "none";
         signed.style.display = "block";
         userWelc.innerText = "Welcome, " + localStorage.user;
+        cart.style.display = "flex";
     } else {
         register.style.display = "block";
         signed.style.display = "none";
+    }
+
+    var bidCartLength = document.querySelector(".bidcart-length");
+
+    if (JSON.parse(localStorage.bidCart).length > 0) {
+        bidCartLength.innerText = JSON.parse(localStorage.bidCart).length;
+        bidCartLength.style.display = "block";
+    }
+
+    var buyCartLength = document.querySelector(".buycart-length");
+
+    if (JSON.parse(localStorage.buyCart).length > 0) {
+        buyCartLength.innerText = JSON.parse(localStorage.buyCart).length;
+        buyCartLength.style.display = "block";
     }
 }
 
@@ -245,6 +526,8 @@ var logout = document.querySelector(".btn-logout");
 
 logout.addEventListener("click", function() {
     localStorage.signed = "false";
+    localStorage.buyCart = JSON.stringify([]);
+    localStorage.bidCart = JSON.stringify([]);
     location.reload();
 });
 
@@ -267,7 +550,11 @@ regist.addEventListener("click", function() {
 });
 
 regist2.addEventListener("click", function() {
-    regist.click();
+    if (localStorage.signed == "false") {
+        regist.click();
+        return;
+    }
+
 })
 
 var regEnter = document.querySelector(".register-btn");
@@ -390,6 +677,7 @@ pricedes.addEventListener("click", function(e) {
     generatePosts(result);
     paginate(result);
     setTimer(result);
+    buy();
 });
 priceas.addEventListener("click", function(e) {
     var result = JSON.parse(localStorage.products);
@@ -399,6 +687,7 @@ priceas.addEventListener("click", function(e) {
     generatePosts(result);
     paginate(result);
     setTimer(result);
+    buy();
 })
 namedes.addEventListener("click", function(e) {
     var result = JSON.parse(localStorage.products);
@@ -408,6 +697,7 @@ namedes.addEventListener("click", function(e) {
     generatePosts(result);
     paginate(result);
     setTimer(result);
+    buy();
 })
 nameas.addEventListener("click", function(e) {
     var result = JSON.parse(localStorage.products);
@@ -417,6 +707,7 @@ nameas.addEventListener("click", function(e) {
     generatePosts(result);
     paginate(result);
     setTimer(result);
+    buy();
 })
 
     /* filter-price */
@@ -471,6 +762,7 @@ function priceFiltrate(from, to) {
     generatePosts(result);
     paginate(result);
     setTimer(result);
+    buy();
     priceFilter.click();
 }
 
@@ -522,6 +814,7 @@ function ctgFiltrate(ctgName, event) {
     generatePosts(result);
     paginate(result);
     setTimer(result);
+    buy();
 }
 
 document.addEventListener("click", function(e) {
@@ -588,8 +881,8 @@ function showSlides(n) {
         slides[i].classList.remove("fade");
     }
 
-    for (var i = 0; i < dots.length; i++) {
-        dots[i].classList.remove("active");
+    for (var j = 0; j < dots.length; j++) {
+        dots[j].classList.remove("active");
     }
 
     slides[slideIndex-1].style.display = "block";
@@ -603,8 +896,8 @@ function nextSlide(){
         slides[i].classList.remove("fade");
     }
 
-    for (var i = 0; i < dots.length; i++) {
-        dots[i].classList.remove("active");
+    for (var j = 0; j < dots.length; j++) {
+        dots[j].classList.remove("active");
     }
 
 	slides[slideIndex-1].style.display = 'none';
@@ -654,6 +947,7 @@ searchBtn.addEventListener("click", function() {
 
     output.style.display = "block";
     generateSearchOutput(find(query.toLowerCase()));
+    setTimer(find(query.toLowerCase()));
 });
 
 var closeSearch = document.querySelector(".closesearch-btn");
@@ -676,7 +970,7 @@ function generateSearchOutput(array) {
         var amount = document.createElement("span");
         amount.classList.add("ctdamount-search");
         var date = new Date(null);
-        date.setSeconds(array[i]["amountHours"]*3600 - secondsFromStart);
+        date.setSeconds(array[i]["amountHours"]*3600 - localStorage.secondsFromStart);
         var result = date.toISOString().substr(11, 8);
         amount.innerText = result;
 
@@ -691,10 +985,6 @@ function generateSearchOutput(array) {
         finishPrice.classList.add("search-finish");
         finishPrice.innerText = "Final: $" + array[i]["finishPrice"];
 
-        var priceStep = document.createElement("p");
-        priceStep.classList.add("post-step");
-        priceStep.innerText = array[i]["priceStep"];
-
         var prodName = document.createElement("a");
         prodName.classList.add("search-name");
         prodName.innerText = "" + array[i]["prodName"];
@@ -703,20 +993,10 @@ function generateSearchOutput(array) {
         prodDescription.classList.add("search-description");
         prodDescription.innerText = "" + array[i]["description"];
 
-        var bid = document.createElement("a");
-        bid.classList.add("post-submit");
-        bid.innerText = "Submit a bid";
-
-        var buy = document.createElement("a");
-        buy.classList.add("post-buy");
-        buy.innerText = "Buy now";
-
         var photoBlock = document.createElement("div");
         photoBlock.classList.add("photo-block");
         var buyBlock = document.createElement("div");
         buyBlock.classList.add("buy-block");
-        var buyBtns = document.createElement("div");
-        buyBtns.classList.add("buy-btns");
         var buyDesc = document.createElement("div");
         buyDesc.classList.add("buy-desc");
 
@@ -726,10 +1006,6 @@ function generateSearchOutput(array) {
         post.appendChild(photoBlock);
         price.appendChild(finishPrice);
         buyBlock.appendChild(price);
-        buyBlock.appendChild(priceStep);
-        buyBtns.appendChild(bid);
-        buyBtns.appendChild(buy);
-        buyBlock.appendChild(buyBtns);
         post.appendChild(buyBlock);
         buyDesc.appendChild(prodName);
         buyDesc.appendChild(prodDescription);
@@ -755,17 +1031,17 @@ function paginate(array) {
     }
     paginat.innerHTML = page;
 
-    for (var i = 0; i < cur_posts.length; i++) {
-        cur_posts[i].style.display = "none";
-        cur_posts[i].classList.remove("fade");
+    for (var j = 0; j < cur_posts.length; j++) {
+        cur_posts[j].style.display = "none";
+        cur_posts[j].classList.remove("fade");
     }
 
     if (postsCount < postsPerPage) {
         postsPerPage = postsCount;
     }
-    for (var i = 0; i < postsPerPage; i++) {
-        cur_posts[i].style.display = "block";
-        cur_posts[i].classList.add("fade");
+    for (var k = 0; k < postsPerPage; k++) {
+        cur_posts[k].style.display = "block";
+        cur_posts[k].classList.add("fade");
     }
 
     var active_page = document.getElementById("page1");
@@ -795,15 +1071,15 @@ function pagination(event, postsPerPage) {
 
     var j = 0;
     var cur_posts = document.querySelectorAll(".current-post");
-    for (var i = 0; i < cur_posts.length; i++) {
-        cur_posts[i].style.display = "none";
-        cur_posts[i].classList.remove("fade");
+    for (var k = 0; k < cur_posts.length; k++) {
+        cur_posts[k].style.display = "none";
+        cur_posts[k].classList.remove("fade");
     }
 
-    for (var i = data_page; i < cur_posts.length; i++) {
+    for (var m = data_page; m < cur_posts.length; m++) {
         if (j >= postsPerPage) break;
-        cur_posts[i].style.display = "block";
-        cur_posts[i].classList.add("fade");
+        cur_posts[m].style.display = "block";
+        cur_posts[m].classList.add("fade");
         j++;
     }
 }
@@ -873,10 +1149,10 @@ function initMap() {
     });
 }
 
-
 generatePosts(JSON.parse(localStorage.products));
 paginate(JSON.parse(localStorage.products));
 setTimer(JSON.parse(localStorage.products));
+buy();
 
 isSigned();
 showSlides(slideIndex);

@@ -51,9 +51,10 @@
                             <li class="navbar-menu__item" id="toBuy">
                                 <a href="#buy" class="navbar-menu__link" id="goToBuy">Buy</a>
                                 <ul class="buy-list">
-                                    <li class="buy-item"><i class="fas fa-chevron-right"></i><a class="buy-link">Laptop</a></li>
-                                    <li class="buy-item"><i class="fas fa-chevron-right"></i><a class="buy-link">Sweetshot</a></li>
-                                    <li class="buy-item"><i class="fas fa-chevron-right"></i><a class="buy-link">Boots</a></li>
+                                    <li class="buy-item"><i class="fas fa-chevron-right"></i><a class="buy-link">Computers</a></li>
+                                    <li class="buy-item"><i class="fas fa-chevron-right"></i><a class="buy-link">Home appliances</a></li>
+                                    <li class="buy-item"><i class="fas fa-chevron-right"></i><a class="buy-link">Clothes</a></li>
+                                    <li class="buy-item"><i class="fas fa-chevron-right"></i><a class="buy-link">Shoes</a></li>
                                 </ul>
                             </li>
                             <li class="navbar-menu__item">
@@ -63,6 +64,10 @@
                                 <a href="#contacts" class="navbar-menu__link">Contacts</a>
                             </li>
                         </ul>
+                        <div class="cart">
+                            <i class="fas fa-gavel"><span class="bidcart-length"></span></i>
+                            <i class="fas fa-shopping-cart"><span class="buycart-length"></span></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -183,9 +188,10 @@
                     <div class="filter-category">
                         Category
                         <ul class="category-list hidden">
-                            <li class="category-item">Laptop</li>
-                            <li class="category-item">Sweetshot</li>
-                            <li class="category-item">Boots</li>
+                            <li class="category-item">Computers</li>
+                            <li class="category-item">Home appliances</li>
+                            <li class="category-item">Clothes</li>
+                            <li class="category-item">Shoes</li>
                         </ul>
                     </div>
                 </div>
@@ -347,13 +353,15 @@
             <p class="sell-desc">Form to Selling</p>
             <form class="sell-form" name="sell">
                 <input type="text" class="product-name" placeholder="Input your product name" required>
+                <input type="text" class="product-desc" placeholder="Input your product description" required>
                 <input type="text" class="product-price" placeholder="Input your product start price ($)" required>
                 <input type="text" class="product-finalprice" placeholder="Input your product final price ($)" required>
                 <input type="text" class="product-step" placeholder="Input auction step ($)" required>
                 <select class="select-ctg" name="select-ctg">
-                    <option value="laptop">Laptop</option>
-                    <option value="sweetshot">Sweetshot</option>
-                    <option value="boots">Boots</option>
+                    <option value="computers">Computers</option>
+                    <option value="home appliances">Home appliances</option>
+                    <option value="clothes">Clothes</option>
+                    <option value="shoes">Shoes</option>
                 </select>
                 <input type="file" class="product-img" accept="image/*">
                 <button type="submit" name="sell" class="sell-btn">Sell</button>
@@ -366,6 +374,20 @@
             <p class="search-desc">Search Output Form. Your query</p>
             <div class="search-posts" id="search-posts"></div>
             <button type="button" name="close" class="closesearch-btn">Close</button>
+        </div>
+    </div>
+    <div class="bid-cart">
+        <div class="bid-modal">
+            <p class="bid-desc">Your bids</p>
+            <div class="bid-posts" id="bid-posts"></div>
+            <button type="button" name="close" class="closebid-btn">Close</button>
+        </div>
+    </div>
+    <div class="buy-cart">
+        <div class="buy-modal">
+            <p class="buycart-desc">Your cart</p>
+            <div class="buy-posts" id="buy-posts"></div>
+            <button type="button" name="close" class="closebuy-btn">Close</button>
         </div>
     </div>
     <a href="#top" id="toTop"><i class="fas fa-chevron-up"></i></a>
