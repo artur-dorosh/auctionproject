@@ -224,7 +224,9 @@ bidIcon.addEventListener("click", function() {
 
     bid.style.display = "block";
     generateBidCart(JSON.parse(localStorage.bidCart), bidCartPosts);
-    setTimer(JSON.parse(localStorage.bidCart));
+    if (JSON.parse(localStorage.bidCart).length > 0) {
+        setTimer(JSON.parse(localStorage.bidCart));
+    }
     bidClose.onclick = function() {
         bid.style.display = "none";
     }
