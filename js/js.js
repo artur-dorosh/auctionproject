@@ -71,7 +71,7 @@ function generatePosts(array) {
 
 /* timer */
 
-localStorage.secondsFromStart = 0;
+//localStorage.secondsFromStart = 0;
 localStorage.secondsFromStart = localStorage.secondsFromStart ? localStorage.secondsFromStart : 0;
 var start = setInterval(function() {
     localStorage.secondsFromStart++;
